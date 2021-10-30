@@ -45,34 +45,39 @@ The package identifies the template file using the `.template.ejs`
 ```javascript
 const { MailerSetup, Mail } = require('mail-template-sender')
 const { SendGridProvider } = require('mail-template-sender/providers')
-const sgMail = require('@sendgrid/mail');
+
 
 // Adding SendGrid Provider
+const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(/* Send Grid Key */)
 const sgProvider = new SendGridProvider(sgMail);
 
+
+// Create MailerTemplateSetup
 const mailerOptions = {
   provider: sgProvider,
   templateDir: path.join(__dirname, 'templates')
 }
-// Mailer Ob
 const mailer = MailerTemplateSetup.config(mailerOptions)
 
+
+// Create mail object
 const mailOptions = {
   template: 'verification',
   to: 'youremail@gmail.com',
-  from: 'myemail@gmail.com', // Use the email address or domain you verified above
+  from: 'myemail@gmail.com',
   subject: 'From My Mailer',
 }
-
-// This is the Mail Object
 const mail = new Mail(mailOptions)
 
-// Add the template data
+
+// Add template data
 mail.addData({ user: 'Bla' })
+
 
 // Send mail
 mailer.mailSender.send(mail)
+
 ```
 
 ### Configuring mail-template-sender
