@@ -1,0 +1,27 @@
+{
+  "name": "mail-sender",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Obisike Treasure <obisiket@gmail.com> (https://github.com/otrex/)",
+  "description": "Email - Template Sender",
+  "license": "MIT",
+  "keywords": [
+    "cors",
+    "express",
+    "connect",
+    "middleware"
+  ],
+  "dependencies": {
+    "ejs": "^3.1.6"
+  },
+  "files": [
+    "lib/index.js",
+    "CONTRIBUTING.md",
+    "HISTORY.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">= 0.10"
+  }
+}
