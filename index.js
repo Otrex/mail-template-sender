@@ -68,5 +68,5 @@ class MailerSetup {
   }
 }
 
-exports.MailerSetup = MailerSetup;
+exports.MailerTemplateSetup = MailerSetup;
 exports.Mail = Mail;

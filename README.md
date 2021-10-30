@@ -1,4 +1,4 @@
-# Mail-Sender
+# mail-template-sender
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
@@ -6,9 +6,9 @@
 
 <!-- [![Test Coverage][coveralls-image]][coveralls-url] -->
 
-Mail-Sender is an event emitting, node.js package for providing a mail template sending capabilities with various options.
+mail-template-sender is an event emitting, node.js package for providing a mail template sending capabilities with various options.
 
-Note: By default, mail-sender uses `ejs` as its template engine
+Note: By default, mail-template-sender uses `ejs` as its template engine
 
 <!-- **[Follow me (@troygoode) on Twitter!](https://twitter.com/intent/user?screen_name=troygoode)** -->
 
@@ -30,13 +30,13 @@ This is a [Node.js](https://nodejs.org/en/) module available through the
 [`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
 
 ```sh
-$ npm install mail-sender
+$ npm install mail-template-sender
 ```
 
 or
 
 ```sh
-$ yarn add mail-sender
+$ yarn add mail-template-sender
 ```
 
 ## Usage
@@ -48,8 +48,8 @@ To use the default template engine, create a folder containing all your mails in
 The package identifies the template file using the `.template.ejs`
 
 ```javascript
-const { MailerSetup, Mail } = require('mail-sender')
-const { SendGridProvider } = require('mail-sender/providers')
+const { MailerSetup, Mail } = require('mail-template-sender')
+const { SendGridProvider } = require('mail-template-sender/providers')
 const sgMail = require('@sendgrid/mail');
 
 // Adding SendGrid Provider
@@ -61,7 +61,7 @@ const mailerOptions = {
   templateDir: path.join(__dirname, 'templates')
 }
 // Mailer Ob
-const mailer = MailerSetup.config(mailerOptions)
+const mailer = MailerTemplateSetup.config(mailerOptions)
 
 const mailOptions = const mail = new Mail({
   template: 'verification',
@@ -79,7 +79,7 @@ mail.addData({ user: 'Blessed' })
 mailer.mailSender.send(mail)
 ```
 
-### Configuring Mail-Sender
+### Configuring mail-template-sender
 
 ```javascript
 const mailerOptions = {
@@ -126,7 +126,7 @@ These are classes that can be used as provider. You can create you own provider 
 i.e
 
 ```js
-const Provider = require("mail-sender/core/Provider");
+const Provider = require("mail-template-sender/core/Provider");
 class NewProvider extends Provider {
   // implement the send()
   // Note: The `body` and `mail` are defaultly provided

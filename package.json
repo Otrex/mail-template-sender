@@ -1,5 +1,5 @@
 {
-  "name": "mail-sender",
+  "name": "mail-template-sender",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Obisike Treasure <obisiket@gmail.com> (https://github.com/otrex/)",

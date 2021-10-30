@@ -1,4 +1,4 @@
-# contributing to `Mail-Sender`
+# contributing to `Mail-Template-Sender`
 
 Mail-Sender is a node.js package for providing a mail template sending capabilities with various options. Learn more about the project in [the README](README.md).
 
