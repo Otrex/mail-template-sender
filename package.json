@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Obisike Treasure <obisiket@gmail.com> (https://github.com/otrex/)",
-  "description": "Email - Template Sender",
+  "description": "Email - Template - Sender: Renders templates and sends email",
   "license": "MIT",
+  "repository": "Otrex/mail-template-sender" ,
   "keywords": [
     "cors",
     "express",
