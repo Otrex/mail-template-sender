@@ -7,10 +7,9 @@
   "license": "MIT",
   "repository": "Otrex/mail-template-sender" ,
   "keywords": [
-    "cors",
-    "express",
-    "connect",
-    "middleware"
+    "mail",
+    "email",
+    "sender"
   ],
   "dependencies": {
     "ejs": "^3.1.6"
