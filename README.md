@@ -1,16 +1,11 @@
 # mail-template-sender
 
-[![NPM Version][npm-image]][npm-url]
-[![NPM Downloads][downloads-image]][downloads-url]
-[![Build Status][travis-image]][travis-url]
-
-<!-- [![Test Coverage][coveralls-image]][coveralls-url] -->
 
 mail-template-sender is an event emitting, node.js package for providing a mail template sending capabilities with various options.
 
 Note: By default, mail-template-sender uses `ejs` as its template engine
 
-<!-- **[Follow me (@troygoode) on Twitter!](https://twitter.com/intent/user?screen_name=troygoode)** -->
+<!-- **[Follow me (@obisiket1) on Twitter!](https://twitter.com/intent/user?screen_name=obisiket1)** -->
 
 - [Installation](#installation)
 - [Usage](#usage)
