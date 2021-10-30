@@ -58,17 +58,18 @@ const mailerOptions = {
 // Mailer Ob
 const mailer = MailerTemplateSetup.config(mailerOptions)
 
-const mailOptions = const mail = new Mail({
+const mailOptions = {
   template: 'verification',
   to: 'youremail@gmail.com',
   from: 'myemail@gmail.com', // Use the email address or domain you verified above
   subject: 'From My Mailer',
-})
+}
+
 // This is the Mail Object
 const mail = new Mail(mailOptions)
 
 // Add the template data
-mail.addData({ user: 'Blessed' })
+mail.addData({ user: 'Bla' })
 
 // Send mail
 mailer.mailSender.send(mail)
