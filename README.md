@@ -92,7 +92,7 @@ const mailOptions = {
 ```
 <br><br/>
 ## MailTemplateSender
-----
+
 - `onError(cb)`: This method recieves a callback to handle what happens when a mail fails to send
 
   - `cb`: this must be a callback eg. `cb  = (error, mail) => {}`
@@ -104,7 +104,7 @@ const mailOptions = {
 
 <br><br>
 ## Mail Class
----
+
 - `addData(data)`: This method is used to add the data that used inside the ejs template
 
   - `data`: this must be an Object
