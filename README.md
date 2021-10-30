@@ -60,8 +60,8 @@ const mailer = MailerTemplateSetup.config(mailerOptions)
 
 const mailOptions = const mail = new Mail({
   template: 'verification',
-  to: 'blessedeni73@gmail.com',
-  from: 'tochiadams3@gmail.com', // Use the email address or domain you verified above
+  to: 'youremail@gmail.com',
+  from: 'myemail@gmail.com', // Use the email address or domain you verified above
   subject: 'From My Mailer',
 })
 // This is the Mail Object
@@ -90,25 +90,38 @@ const mailOptions = {
   subject: /* preffered subject */,
 }
 ```
+<br><br/>
+## MailTemplateSender
+----
+- `onError(cb)`: This method recieves a callback to handle what happens when a mail fails to send
 
+  - `cb`: this must be a callback eg. `cb  = (error, mail) => {}`
+
+------
+- `onSent(cb)`: This method recieves a callback to handle what happens when a mail is sent successfully
+
+  - `cb`: this must be a callback eg. `cb = (mail, result) => {}`
+
+<br><br>
 ## Mail Class
-
-- `addData(data)`: This function is used to add the data that used inside the ejs template
+---
+- `addData(data)`: This method is used to add the data that used inside the ejs template
 
   - `data`: this must be an Object
-
+---
 - `addSubject(data)`: Adds the subject to the mail(although it can be added during mail creation)
 
   - `data`: this must be string
-
+----
 - `addTo(data)`: Adds the reciever to the mail(although it can be added during mail creation)
 
   - `data`: this must be string
-
+----
 - `addFrom(data)`: Adds the sender to the mail(although it can be added during mail creation). Use the email address or domain you verified
 
   - `data`: this must be string
 
+<br></br>
 ## Provider
 
 The provides provided for you are
@@ -128,10 +141,12 @@ class NewProvider extends Provider {
 }
 ```
 
+<br></br>
 ## Implementing A different template Engine
 
 Coming Soon
-
+<br></br>
+<br></br>
 ## License
 
 [MIT License](http://www.opensource.org/licenses/mit-license.php)
