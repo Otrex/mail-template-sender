@@ -2,33 +2,33 @@ const { MailSendError } = require("../core/exceptions");
 const EventEmitter = require("events");
 
 class MailSender extends EventEmitter {
-  templatePaths = {}
+  templatePaths = {};
 
   setUpEventListerners(options = {}) {
-    this.on('send', async (mail) => {
+    this.on("send", async (mail) => {
       try {
-        const mailTemplatePath = this.templatePaths[mail.template]
-        mail._addTemplatePath(mailTemplatePath)
+        const mailTemplatePath = this.templatePaths[mail.template];
+        mail._addTemplatePath(mailTemplatePath);
         options.provider.addMail(mail);
-        options.provider.addMailBody(await mail.render())
+        options.provider.addMailBody(await mail.render());
         await options.provider.send();
-        this.emit('sent', mail)
+        this.emit("sent", mail);
       } catch (error) {
         this.emit("error", error, mail);
       }
     });
 
-    this.on('error', (error) => {
-      throw new MailSendError(error)
-    })
+    this.on("error", (error) => {
+      throw new MailSendError(error);
+    });
   }
 
   send(mail) {
-    if (mail._name !== 'Mail') {
-      throw new MailSendError('invalid mail parameter')
+    if (mail._name !== "Mail") {
+      throw new MailSendError("invalid mail parameter");
     }
-    this.emit('send', mail)
+    this.emit("send", mail);
   }
 }
 
-module.exports = MailSender
+module.exports = MailSender;

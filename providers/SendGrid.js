@@ -11,10 +11,10 @@ class SendGridProvider extends Provider {
       to: this.mail.to,
       from: this.mail.from,
       subject: this.mail.subject,
-      html: this.body
-    }
-    await this.sendGridMail.send(options);
+      html: this.body,
+    };
+    return this.sendGridMail.send(options);
   }
 }
 
-module.exports = SendGridProvider
+module.exports = SendGridProvider;

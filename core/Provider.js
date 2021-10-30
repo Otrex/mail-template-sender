@@ -1,15 +1,15 @@
 class Provider {
-  _isProvider = true
+  _isProvider = true;
 
   addMail(mail) {
-    this.mail = mail
+    this.mail = mail;
   }
 
   addMailBody(body = "") {
-    this.body = body
+    this.body = body;
   }
 
   async send() {}
 }
 
-module.exports = Provider
+module.exports = Provider;

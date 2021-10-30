@@ -1,7 +1,7 @@
-const NodeMailerProvider = require("./NodeMailer")
-const SendGridProvider = require("./SendGrid")
+const NodeMailerProvider = require("./NodeMailer");
+const SendGridProvider = require("./SendGrid");
 
 module.exports = {
   SendGridProvider,
-  NodeMailerProvider
-}
+  NodeMailerProvider,
+};

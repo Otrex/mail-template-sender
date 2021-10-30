@@ -1,11 +1,13 @@
 const { MailSendError } = require("../core/exceptions");
-const { promisify } = require('util');
+const { promisify } = require("util");
 const ejs = require("ejs");
 
-const ejsRender = ({template, data}, cb) => { ejs.renderFile(template, data, {}, cb) }
+const ejsRender = ({ template, data }, cb) => {
+  ejs.renderFile(template, data, {}, cb);
+};
 
 class Mail {
-  _name = 'Mail'
+  _name = "Mail";
 
   constructor({ template, to, from, subject }) {
     this.template = template;
@@ -21,35 +23,37 @@ class Mail {
 
   addData(data) {
     this.data = { ...this.data, ...data };
-    return this
+    return this;
   }
 
   addSubject(data) {
     this.subject = data;
-    return this
+    return this;
   }
 
   addTo(data) {
     this.to = data;
-    return this
+    return this;
   }
 
   addFrom(data) {
     this.from = data;
-    return this
+    return this;
   }
 
   _addTemplatePath(pathx) {
-    this.templatePath = pathx
-    return this
+    this.templatePath = pathx;
+    return this;
   }
 
   async render() {
-    if (!this.templatePath) throw new MailSendError('no template path added')
-    const renderedMail = await promisify(ejsRender)({template: this.templatePath, data: this.data})
-    return renderedMail
+    if (!this.templatePath) throw new MailSendError("no template path added");
+    const renderedMail = await promisify(ejsRender)({
+      template: this.templatePath,
+      data: this.data,
+    });
+    return renderedMail;
   }
-
 }
 
-module.exports = Mail
+module.exports = Mail;
