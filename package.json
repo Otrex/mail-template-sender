@@ -1,6 +1,6 @@
 {
   "name": "mail-template-sender",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "author": "Obisike Treasure <obisiket@gmail.com> (https://github.com/otrex/)",
   "description": "Email - Template - Sender: Renders templates and sends email",
