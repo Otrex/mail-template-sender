@@ -11,8 +11,8 @@ class MailSender extends EventEmitter {
         mail._addTemplatePath(mailTemplatePath);
         options.provider.addMail(mail);
         options.provider.addMailBody(await mail.render());
-        await options.provider.send();
-        this.emit("sent", mail);
+        const result = await options.provider.send();
+        this.emit("sent", mail, result);
       } catch (error) {
         this.emit("error", error, mail);
       }

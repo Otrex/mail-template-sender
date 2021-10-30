@@ -57,7 +57,7 @@ class MailerSetup {
     return Object.fromEntries(templateMapEntries);
   }
 
-  onSent(cb = (mail) => {}) {
+  onSent(cb = (mail, result) => {}) {
     this.mailSender.on("sent", cb);
     return this;
   }
