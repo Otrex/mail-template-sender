@@ -10,11 +10,10 @@ Note: By default, mail-template-sender uses `ejs` as its template engine
 - [Installation](#installation)
 - [Usage](#usage)
   - [Simple Usage](#This-is-how-to-set-it-up-for-your-project)
-  - [Creating and Implementing a new Mail Provider](#Implement-a-mail-provider)
-  - [Implementing a different template engine](#Implement-a-template-engine)
+  - [Configuring mail-template-sender](#Configuring-mail-template-sender)
   - [Adding more infomation to mail](#adding-data-to-mail)
 - [Configuration Options](#configuration-options)
-- [Demo](#demo)
+- [Implementing a different template engine](#Implement-a-template-engine)
 - [License](#license)
 - [Author](#author)
 
@@ -43,7 +42,7 @@ To use the default template engine, create a folder containing all your mails in
 The package identifies the template file using the `.template.ejs`
 
 ```javascript
-const { MailerSetup, Mail } = require('mail-template-sender')
+const { MailerTemplateSetup, Mail } = require('mail-template-sender')
 const { SendGridProvider } = require('mail-template-sender/providers')
 
 
@@ -109,7 +108,7 @@ const mailOptions = {
   - `cb`: this must be a callback eg. `cb = (mail, result) => {}`
 
 <br><br>
-## Mail Class
+## Mail Class Methods
 
 - `addData(data)`: This method is used to add the data that used inside the ejs template
 
@@ -128,7 +127,7 @@ const mailOptions = {
   - `data`: this must be string
 
 <br></br>
-## Provider
+## Providers
 
 The provides provided for you are
 

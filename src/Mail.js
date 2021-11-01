@@ -2,7 +2,7 @@ const { MailSendError } = require("../core/exceptions");
 const { promisify } = require("util");
 const ejs = require("ejs");
 
-const ejsRender = ({ template, data }, cb) => {
+const ejsRenderer = ({ template, data }, cb) => {
   ejs.renderFile(template, data, {}, cb);
 };
 
@@ -48,7 +48,7 @@ class Mail {
 
   async render() {
     if (!this.templatePath) throw new MailSendError("no template path added");
-    const renderedMail = await promisify(ejsRender)({
+    const renderedMail = await promisify(ejsRenderer)({
       template: this.templatePath,
       data: this.data,
     });
