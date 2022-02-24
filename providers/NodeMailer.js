@@ -13,7 +13,7 @@ class NodeMailerProvider extends Provider {
       subject: this.mail.subject,
       html: this.body,
     };
-    return transporter.sendMail(options);
+    return this.transporter.sendMail(options);
   }
 }
 
